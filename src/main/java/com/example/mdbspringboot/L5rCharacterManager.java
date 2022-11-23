@@ -33,32 +33,32 @@ public class L5rCharacterManager implements CommandLineRunner {
 	public int construirMenu() {
 		System.out.println("Bem vindo ao depósito de pergonagens L5R");
 		System.out.println("O que deseja fazer?");
-		System.out.println("1 Criar um personagem");
-		System.out.println("2 Visualizar um personagem");
-		System.out.println("3 Editar um personagem");
-		System.out.println("4 Deletar um personagem");
-		System.out.println("5 Sair");
+		System.out.println("1 - Criar um personagem");
+		System.out.println("2 - Visualizar um personagem");
+		System.out.println("3 - Editar um personagem");
+		System.out.println("4 - Deletar um personagem");
+		System.out.println("5 - Sair");
 		System.out.println("---------------------------------");
 
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
-		System.out.println("Teste depois do scanner");
 		switch (n) {
 		case 1:
-			System.out.println("Voce digitou 1");
+			System.out.println("Você selecionou \"1- Criar um personagem\"");
 			return switchCriarPersonagem();
 		case 2:
-			System.out.println("Voce digitou 2");
+			System.out.println("Você selecionou \"2 - Visualizar um personagem\"");
 			return listarTodosPersonagens();
 		case 3:
-			System.out.println("Voce digitou 3");
+			System.out.println("Você selecionou \"3 - Editar um personagem\"");
 			return switchAtualizarPersonagem();
 		case 4:
-			System.out.println("Voce digitou 4");
+			System.out.println("Você selecionou \"4 - Deletar um personagem\"");
 			return switchDeletarPersonagem();
 		case 5:
-			System.out.println("Voce digitou 5");
+			System.out.println("Você selecionou \"5 - Sair\"");
+			System.out.println("Encerrando a aplicação...");
 			System.exit(0);
 		default:
 			System.out.println("Você digitou uma ação invalida!");
@@ -72,11 +72,10 @@ public class L5rCharacterManager implements CommandLineRunner {
 
 	public int switchCriarPersonagem() {
 		while (true) {
-			System.out.println("Você selecionou \"1- Criar um personagem\"");
 			System.out.println("O que deseja fazer?");
-			System.out.println("1 Criar um personagem");
-			System.out.println("2 Preencher o BD com personagens padrões");
-			System.out.println("3 Voltar");
+			System.out.println("1 - Criar um personagem");
+			System.out.println("2 - Preencher o BD com personagens padrões");
+			System.out.println("3 - Voltar");
 			System.out.println("---------------------------------");
 
 			@SuppressWarnings("resource")
@@ -84,15 +83,16 @@ public class L5rCharacterManager implements CommandLineRunner {
 			int n = scanner.nextInt();
 			switch (n) {
 			case 1:
-				System.out.println("Voce digitou 1");
+				System.out.println("Você selecionou \"1- Criar um personagem\"");
 				return criarPersonagem();
 			case 2:
-				System.out.println("Voce digitou 2");
+				System.out.println("Você selecionou \"2 - Preencher o BD com personagens padrões\"");
 				criarPersonagensPadroes();
-				System.out.println("Placeholders criados");
+				System.out.println("Personagens criados");
 				System.out.println("---------------------------------");
+				return 0;
 			case 3:
-				System.out.println("Voce digitou 3");
+				System.out.println("Você selecionou \"3 - Voltar\"");
 				return construirMenu();
 			default:
 				System.out.println("Você digitou uma ação invalida!");
@@ -182,11 +182,10 @@ public class L5rCharacterManager implements CommandLineRunner {
 	
 	public int switchAtualizarPersonagem() {
 		while (true) {
-			System.out.println("Você selecionou \"3- Editar um personagem\"");
 			System.out.println("O que deseja fazer?");
-			System.out.println("1 Atualizar um personagem pelo nome");
-			System.out.println("2 Visualizar uma lista com o nome de todos os personagens");
-			System.out.println("3 Voltar");
+			System.out.println("1 - Atualizar um personagem pelo nome");
+			System.out.println("2 - Visualizar uma lista com o nome de todos os personagens");
+			System.out.println("3 - Voltar");
 			System.out.println("---------------------------------");
 
 			@SuppressWarnings("resource")
@@ -194,14 +193,14 @@ public class L5rCharacterManager implements CommandLineRunner {
 			int n = scanner.nextInt();
 			switch (n) {
 			case 1:
-				System.out.println("Voce digitou 1");
+				System.out.println("Você selecionou \"1 - Atualizar um personagem pelo nome\"");
 				return controladorAtualizarPersonagem();
 			case 2:
-				System.out.println("Voce digitou 2");
+				System.out.println("Você selecionou \"2 - Visualizar uma lista com o nome de todos os personagens\"");
 				listarBasicoTodosPersonagens();
 				break;
 			case 3:
-				System.out.println("Voce digitou 3");
+				System.out.println("Você selecionou \"3 - Voltar\"");
 				return 0;
 			default:
 				System.out.println("Você digitou uma ação invalida!");
@@ -272,12 +271,11 @@ public class L5rCharacterManager implements CommandLineRunner {
 	// DELETE
 
 	public int switchDeletarPersonagem() {
-		System.out.println("Você selecionou \"4- Deletar um personagem\"");
 		while (true) {
 			System.out.println("O que deseja fazer?");
-			System.out.println("1 Deletar um personagem pelo nome");
-			System.out.println("2 Deletar todos os personagens");
-			System.out.println("3 Voltar");
+			System.out.println("1 - Deletar um personagem pelo nome");
+			System.out.println("2 - Deletar todos os personagens");
+			System.out.println("3 - Voltar");
 			System.out.println("---------------------------------");
 
 			@SuppressWarnings("resource")
@@ -285,13 +283,13 @@ public class L5rCharacterManager implements CommandLineRunner {
 			int n = scanner.nextInt();
 			switch (n) {
 			case 1:
-				System.out.println("Voce digitou 1");
+				System.out.println("Você selecionou \"1 - Deletar um personagem pelo nome\"");
 				return deletarPersonagem();
 			case 2:
-				System.out.println("Voce digitou 2");
+				System.out.println("Você selecionou \"2 - Deletar todos os personagens\"");
 				return deletarTodosPersonagens();
 			case 3:
-				System.out.println("Voce digitou 3");
+				System.out.println("Você selecionou \"3 - Voltar\"");
 				System.out.println("---------------------------------");
 				return 0;
 			default:
